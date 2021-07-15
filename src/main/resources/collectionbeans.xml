@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="question1" class="com.learn.mavendemo.model.Question">
+		<property name="questionId" value="1"></property>
+		<property name="questionText" value="What is Constructor?"></property>
+		<property name="answer">
+			<list>
+				<value>Constructor is having same name as a Class</value>
+				<value>Constructor can be Overload</value>
+				<value>used to initialize the Instance variable</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="question2" class="com.learn.mavendemo.model.Question">
+		<constructor-arg name="questionId" value="2"></constructor-arg>
+		<constructor-arg name="questionText"
+			value="List the feautues of Java"></constructor-arg>
+		<constructor-arg name="answer">
+			<list>
+				<value>OOP language</value>
+				<value>Platform independent</value>
+				<value>MultiThreading</value>
+				<value>Automatic garbage Collection</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="item1" class="com.learn.mavendemo.model.MenuItem">
+		<constructor-arg name="id" value="11"></constructor-arg>
+		<constructor-arg name="name" value="Pizza"></constructor-arg>
+		<constructor-arg name="price" value="100"></constructor-arg>
+	</bean>
+
+	<bean id="item2" class="com.learn.mavendemo.model.MenuItem">
+		<constructor-arg name="id" value="12"></constructor-arg>
+		<constructor-arg name="name" value="Poha"></constructor-arg>
+		<constructor-arg name="price" value="40"></constructor-arg>
+	</bean>
+
+	<bean id="item3" class="com.learn.mavendemo.model.MenuItem">
+		<constructor-arg name="id" value="13"></constructor-arg>
+		<constructor-arg name="name" value="Pasta"></constructor-arg>
+		<constructor-arg name="price" value="80"></constructor-arg>
+	</bean>
+
+	<bean id="cart1" class="com.learn.mavendemo.model.Cart">
+		<constructor-arg name="id" value="101"></constructor-arg>
+		<constructor-arg name="name" value="Tom"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="item1"></ref>
+				<ref bean="item2"></ref>
+				<ref bean="item3"></ref>
+			</list>
+		</constructor-arg>
+	</bean>
+
+
+
+
+
+</beans>
